@@ -36,7 +36,7 @@ THEN I am prompted to select an employee to update and their new role and this i
 To install this app you will need to run NPM install for the following dependencies in your CLI: Inquirer,fs, jest, console.table, mysql, mysql2, and util. This will allow the question prompts from the CLI for you to input information into.
 
 ## Usage:
-https://watch.screencastify.com/v/0qCOtMSrblVuhFcXxPGb
+https://watch.screencastify.com/v/ofND3CIH1VwjoMHD2izD
 
 ## Screenshot
 
