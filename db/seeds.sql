@@ -1,31 +1,33 @@
-USE employees_db;
+SELECT roles.id, roles.title, roles.salary FROM roles ORDER BY roles.id;
+SELECT roles.id, roles.title FROM roles ORDER BY roles.id;
+SELECT * FROM employee;
 
-INSERT INTO department
-    (name)
-VALUES
-    ('Operations'),
-    ('Analystics'),
-    ('Marketing'),
-    ('Executive');
+SELECT department.id, department.name FROM department ORDER BY department.id;
 
-INSERT INTO role
-    (title, salary, department_id)
-VALUES
-    ('General Manager', 5000000, 1),
-    ('Coach', 9000000, 1),
-    ('Team Analyst', 600000, 2),
-    ('Team Lead Analyst', 800000, 2),
-    ('Media Lead', 400000, 3),
-    ('Media Specialist', 3000000, 3),
-    ('CEO', 20000000, 4),
+SELECT department.name AS department, roles.title, employee.id, employee.first_name, employee.last_name
+    FROM employee
+    LEFT JOIN roles ON (roles.id = employee.roles_id)
+    LEFT JOIN department ON (department.id = roles.department_id)
+    ORDER BY department.name;
+    
+SELECT CONCAT(manager.first_name, ' ', manager.last_name) AS manager, department.name AS department, employee.id, employee.first_name, employee.last_name, roles.title
+  FROM employee
+  LEFT JOIN employee manager on manager.id = employee.manager_id
+  INNER JOIN roles ON (roles.id = employee.roles_id && employee.manager_id != 'NULL')
+  INNER JOIN department ON (department.id = roles.department_id)
+  ORDER BY manager;
+  
+SELECT roles.title, employee.id, employee.first_name, employee.last_name, department.name AS department
+    FROM employee
+    LEFT JOIN roles ON (roles.id = employee.roles_id)
+    LEFT JOIN department ON (department.id = roles.department_id)
+    ORDER BY roles.title;
 
-INSERT INTO employee
-    (first_name, last_name, role_id, manager_id)
-VALUES
-    ('Sam', 'Presti', 1, 4),
-    ('Jerry', 'Sloan', 2, 1),
-    ('Donovan', 'Mitchell', 3, 2),
-    ('Larry', 'Miller', 4, NULL),
-    ('Rudy', 'Gobert', 5, 3),
-    ('Karl', 'Malone', 6, 2)
-    ('John', 'Stockton', 7, NULL);
+SELECT employee.id, employee.first_name, employee.last_name, roles.title, department.name AS department, roles.salary, CONCAT(manager.first_name, ' ', manager.last_name) AS manager
+  FROM employee
+  LEFT JOIN employee manager on manager.id = employee.manager_id
+  INNER JOIN roles ON (roles.id = employee.roles_id)
+  INNER JOIN department ON (department.id = roles.department_id)
+  ORDER BY employee.id;
+  
+SELECT first_name, last_name, roles_id FROM employee 	WHERE employee.id = 4;
