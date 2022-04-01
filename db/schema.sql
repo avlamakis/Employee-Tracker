@@ -1,36 +1,36 @@
-DROP DATABASE IF EXISTS employee_DB;
-CREATE DATABASE employee_DB;
+CREATE DATABASE employee_db;
 
-USE employee_DB;
+USE employee_db;
 
-CREATE TABLE department(
-    id INT NOT NULL AUTO_INCREMENT,
-    department_name VARCHAR(30) NOT NULL,
-    PRIMARY KEY (id) 
+CREATE TABLE department (
+    id INT AUTO_INCREMENT, 
+    name VARCHAR(30) NOT NULL, 
+    PRIMARY KEY(id)
 );
 
-CREATE TABLE employee_role(
-    id INT NOT NULL AUTO_INCREMENT,
-    title VARCHAR(30) NOT NULL,
-    salary DECIMAL NOT NULL,
-    department_id INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE CASCADE
--- REFERENCES means that the Foreign key corresponds to the primary key of the other table
--- ON DELETE CASCADE means that if this key is deleted, it will delete values on all the other tables with this key
+CREATE TABLE role (
+    id INT AUTO_INCREMENT,
+    title VARCHAR(30) NOT NULL, 
+    salary DECIMAL(6,2) NOT NULL, 
+    department_id INT NOT NULL, 
+    PRIMARY KEY(id),
+    FOREIGN KEY(department_id)
+    REFERENCES department(id)
 );
 
-CREATE TABLE employee(
-    id INT NOT NULL AUTO_INCREMENT,
-    first_name VARCHAR(30) NOT NULL,
-    last_name VARCHAR(30) NOT NULL,
-    role_id INT NOT NULL,
-    manager_id INT, 
-    PRIMARY KEY (id),
-    FOREIGN KEY (role_id) REFERENCES employee_role(id) ON DELETE CASCADE,
-    FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE CASCADE
+CREATE TABLE employee (
+    id INT AUTO_INCREMENT, 
+    first_name VARCHAR(30) NOT NULL, 
+    last_name VARCHAR(30) NOT NULL, 
+    role_id INT NOT NULL, 
+    manager_id INT,
+    PRIMARY KEY(id),
+
+    FOREIGN KEY(role_id)
+    REFERENCES role(id),
+
+    FOREIGN KEY(manager_id)
+    REFERENCES employee(id)
 
 );
-
-
 
