@@ -1,21 +1,21 @@
 {
   "name": "employee-tracker-12",
   "version": "1.0.0",
-  "description": "Employee Tracker Chanllenge 12",
+  "description": "Employee Tracker",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sessions21/employee-tracker-12.git"
+    "url": "git+https://github.com/avlamakis/Employee-Tracker.git"
   },
   "author": "Scott Nichols",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Sessions21/employee-tracker-12/issues"
+    "url": "https://github.com/avlamakis/Employee-Tracker/issues"
   },
-  "homepage": "https://github.com/Sessions21/employee-tracker-12#readme",
+  "homepage": "https://github.com/avlamakis/Employee-Tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
     "dotenv": "^14.3.2",
