@@ -1,28 +1,27 @@
 {
-  "name": "Employee-Tracker",
+  "name": "employee-tracker-12",
   "version": "1.0.0",
-  "description": "Application that allows the user to track employees",
-  "main": "Employee.js",
-  "dependencies": {
-    "console.table": "^0.10.0",
-    "inquirer": "^7.3.2",
-    "mysql": "^2.18.1",
-    "promise-mysql": "^4.1.3"
-  },
-  "devDependencies": {},
+  "description": "Employee Tracker Chanllenge 12",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Employee.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/avlamakis/Employee-Tracker.git"
+    "url": "git+https://github.com/Sessions21/employee-tracker-12.git"
   },
-  "author": "",
+  "author": "Scott Nichols",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/avlamakis/Employee-Tracker/issues"
+    "url": "https://github.com/Sessions21/employee-tracker-12/issues"
   },
-  "homepage": "https://github.com/avlamakis/Employee-Tracker#readme"
+  "homepage": "https://github.com/Sessions21/employee-tracker-12#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^14.3.2",
+    "env": "^0.0.2",
+    "inquirer": "^8.2.0",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15"
+  }
 }
-
