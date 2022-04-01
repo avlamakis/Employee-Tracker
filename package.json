@@ -1,16 +1,18 @@
 {
   "name": "Employee-Tracker",
   "version": "1.0.0",
-  "description": "Employee Tracker",
-  "main": "index.js",
+  "description": "> TBD.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/avlamakis/Employee-Tracker.git"
   },
-  "author": "Scott Nichols",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/avlamakis/Employee-Tracker/issues"
@@ -18,10 +20,8 @@
   "homepage": "https://github.com/avlamakis/Employee-Tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
-    "dotenv": "^14.3.2",
-    "env": "^0.0.2",
-    "inquirer": "^8.2.0",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.15"
+    "dotenv": "^8.2.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
   }
 }
